@@ -66,10 +66,10 @@ const JobSearch =()=>{
                   
                   <div className="container">
                     <div className="row">
-                      <div className="col-md-12" key={index}>
+                      <div className="col-md-12" >
                         <div className="card mt-3 p-3">
                         
-                            <div className="card-body" >
+                            <div className="card-body"  key={index}>
                               {xtype.title}<br/>
                               <br/>
                               <small className="btn btn-info btn-sm text-white">{xtype.created_at}</small> || <b/>
