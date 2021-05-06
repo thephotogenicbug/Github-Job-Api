@@ -1,8 +1,11 @@
 import React, {useState, useEffect} from 'react';
 import Pagination from './Components/Pagination'
-import { UncontrolledCollapse, Button, CardBody, Card } from 'reactstrap';
+import { UncontrolledCollapse, Button, CardBody, } from 'reactstrap';
+
+
 
 const JobSearch =()=>{
+
     const [user, updateUser]=useState([]);
     const [searchTerm, setSearchTerm]=useState("")
 
@@ -29,8 +32,11 @@ const JobSearch =()=>{
     return(
       <div className="container">
      <div className="row">
-       <div className="col-md-12 mt-3">
+       <div className="col-md-6 mt-3">
          <h3 className="text-primary">Github Job Search </h3>
+       </div>
+       <div className="col-md-6">
+      
        </div>
      </div>
      <div className="row">
@@ -56,6 +62,8 @@ const JobSearch =()=>{
                }
              }).slice(pagination.start, pagination.end).map((xtype, index)=>{
                  return(
+                 
+                  
                   <div className="container">
                     <div className="row">
                       <div className="col-md-12" key={index}>
@@ -77,6 +85,7 @@ const JobSearch =()=>{
                               </UncontrolledCollapse>
 
                             </div>
+                            
                         </div>
                       </div>
                     </div>
@@ -84,6 +93,7 @@ const JobSearch =()=>{
                       
                     </div>
                   </div>
+               
                       
                  )
              })
@@ -92,6 +102,7 @@ const JobSearch =()=>{
 
 
     </div>
+    
       )
 }
 export default JobSearch;
