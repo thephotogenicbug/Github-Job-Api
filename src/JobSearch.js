@@ -10,7 +10,7 @@ const JobSearch =()=>{
     const [searchTerm, setSearchTerm]=useState("")
 
     const getJob=()=>{
-      fetch("https://jobs.github.com/positions.json")
+      fetch("https://jobs.github.com/positions.json?markdown=true")
       .then(response=>response.json())
       .then(result=>updateUser(result))
     }
@@ -71,10 +71,17 @@ const JobSearch =()=>{
                         
                             <div className="card-body"  key={index}>
                               {xtype.title}<br/>
+                              
                               <br/>
                               <small className="btn btn-info btn-sm text-white">{xtype.created_at}</small> || <b/>
                               <small className=" btn btn-success btn-sm text-white">{xtype.type}</small>
+                              <br/> <br/>
+                              <small className="btn btn-info btn-sm">Location : {xtype.location}</small>
                               <br/><br/>
+                              <small className="text-danger"> How to Apply : {xtype.how_to_apply}</small>
+                              <br/><br/>
+
+                              
                               <Button color="primary" id="toggler" style={{ marginBottom: '1rem' }}>
                                 Details
                               </Button>
@@ -83,9 +90,10 @@ const JobSearch =()=>{
                                     {xtype.description}
                                   </CardBody>
                               </UncontrolledCollapse>
-
+                                    <br/>
+                             
                             </div>
-                            
+                             
                         </div>
                       </div>
                     </div>
